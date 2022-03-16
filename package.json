@@ -1,0 +1,24 @@
+{
+  "name": "shrish-workgroup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pandora-Finance/shrish-workgroup.git"
+  },
+  "author": "Shrish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pandora-Finance/shrish-workgroup/issues"
+  },
+  "homepage": "https://github.com/Pandora-Finance/shrish-workgroup#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "axios": "^0.26.1",
+    "web3": "^1.7.1"
+  }
+}
