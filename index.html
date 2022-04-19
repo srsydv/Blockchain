@@ -11,8 +11,6 @@
     <script type="module" src="main.js"></script>
 
     <div>
-    <!-- <input type="text" id="nftContractAddress" placeholder="NFT Contract Address">
-    <input type="text" id="nftTokenId" placeholder="NFT Token Id"> -->
     
     
     <div id="createErc20">
@@ -179,12 +177,56 @@
             />
         
             <button id="btndischargeParticle">Discharge Particle</button>
-              
+            
           </div>
 
+          <div>
+            <div id="releaseParticles">
+                <h4>Approve before Nested NFT</h4>
+              <input
+                type="text"
+                id="tokenIdofnft"
+                required
+                placeholder="Enter Token Number"
+              />
+          
+              <button id="approvesNFTToken">approves Token</button>
+              
+            </div>
+
+            <div id="createChargedParticle">
+              <h4>For Nested NFT</h4>
+              <input
+              type="text"
+              id="tknID"
+              required
+              placeholder="Token ID"
+            />
+            <input
+              type="text"
+              id="nftTokenAddress"
+              required
+              placeholder="NFT TokenAddress"
+            />
+            <input
+              type="text"
+              id="nftTokenId"
+              required
+              placeholder="NFT TokenId"
+            />
+        
+            <button id="covalentBond">Nested NFT</button>
+              
+          </div>
+          
+          <br>
+          <button id="btncreateProtonForSale">create Particle for sale</button>
     <br>
-    <button id="createProtonForSale">create Particle for sale</button>
+    
     <button id="setSalePrice">set Sale Price</button>
+    <button id="buyProton">Buy NFT</button>
+    
+    <!-- <button id="btncreateProtonForSale">set Price</button> -->
     <button id="getSalePrice">Get Sale Price</button>
     
     

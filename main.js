@@ -6,8 +6,10 @@ const protonBaddress = "0x517fEfB53b58Ec8764ca885731Db20Ca2dcac7b7";
 const protonBABI = require('./abis/Proton.json');
 const Dai = '0x30b1bECbfc9aE7Bb620eE6c6031820AF272924BB'
 const ERC20ABI = require('./abis/ERC20.json')
-
+const ERC721ABI = require('./abis/ERC721.json')
+const ERC721NFTAddress = "0x5e42fb2e7a76e2b549817d368bc7629fc2639bb8"
 let contractERC20;
+let contractERC721;
 let accounts;
 
 init = async () => {
@@ -34,6 +36,10 @@ init = async () => {
     ERC20ABI,
     Dai
   );
+  contractERC721 =  new web3.eth.Contract(
+    ERC721ABI,
+    ERC721NFTAddress
+  )
   accounts = await web3.eth.getAccounts();
   console.log("Account Address =>",accounts[0]);
 };
@@ -86,6 +92,18 @@ approves = async() => {
 const tokenamount1 = document.getElementById("tokenamount1");
   const approve1 = document.getElementById("btnApprove");
   approve1.onclick = approves;
+
+  approvesNFTToken = async() => {
+    await contractERC721.methods
+    .approve(chargedParticleaddress, tokenIdofnft.value)
+    .send({ from: accounts[0] })
+    .once("receipt", (reciept) => {
+      console.log(reciept);
+  });
+}
+const tokenIdofnft = document.getElementById("tokenIdofnft");
+  const approvesNFTToken1 = document.getElementById("approvesNFTToken");
+  approvesNFTToken1.onclick = approvesNFTToken;
 
   approves1 = async() => {
     await contractERC20.methods
@@ -204,7 +222,7 @@ createChargedParticles1.onclick = createChargedParticles;
   setSalePrices = async() => {
     const receipt = protonBcontracts.methods
     .setSalePrice(
-        39,
+        46,
         Web3.utils.toWei('0.1')
     )
     .send({ from: accounts[0],
@@ -213,7 +231,30 @@ createChargedParticles1.onclick = createChargedParticles;
     .once("receipt", (reciept) => {
         console.log("reciept",reciept);
     });
-    //39
+    protonBcontracts.methods
+    .setRoyaltiesPct(
+        46,
+        10
+    )
+    .send({ from: accounts[0],
+      // gas:"600000" 
+    })
+    .once("receipt", (reciept) => {
+        console.log("reciept",reciept);
+    });
+    protonBcontracts.methods
+    .setCreatorRoyaltiesReceiver(
+        46,
+        "0x29d14148f9fd7F8EA48c1F81E494c9Bf859CB074"
+    )
+    .send({ from: accounts[0],
+      // gas:"600000" 
+    })
+    .once("receipt", (reciept) => {
+        console.log("reciept",reciept);
+    });
+    
+    
 }
 const setSalePrice1 = document.getElementById("setSalePrice");
 setSalePrice1.onclick = setSalePrices;
@@ -237,7 +278,7 @@ getSalePrices = async() => {
     // });
     const receipt = protonBcontracts.methods
     .getSalePrice(
-        "39"
+        "46"
     )
     .call(
       function(err,res){
@@ -248,7 +289,7 @@ getSalePrices = async() => {
     )
     protonBcontracts.methods
     .getLastSellPrice(
-        "39"
+        "46"
     )
     .call(
       function(err,res){
@@ -258,7 +299,6 @@ getSalePrices = async() => {
       }
     )
     //39
-    
 }
 const getSalePrice1 = document.getElementById("getSalePrice");
 getSalePrice1.onclick = getSalePrices;
@@ -269,17 +309,59 @@ createProtonForSales = async() => {
   .createProtonForSale(
       accounts[0],
       accounts[0],
-      "https://gateway.pinata.cloud/ipfs/QmYruhfGzUrYo2eW16RdSwfDSmUQpBZ2hNAxifiamDWYEx",
-      100,
-      100,
-      Web3.utils.toWei('0.1'),
+      "abc.com",
+      10,
+      10,
+      Web3.utils.toWei('0.1'),  
   )
-  .send({ from: accounts[0] }
+  .send({ from: accounts[0],
+    gas:"600000" }
   )
   .once("receipt", (reciept) => {
       console.log(reciept);
   });
 }
-const createProtonForSales1 = document.getElementById("createProtonForSale");
+const createProtonForSales1 = document.getElementById("btncreateProtonForSale");
 createProtonForSales1.onclick = createProtonForSales;
+
+
+
+buyProtons = async() => {
+  const receipt = protonBcontracts.methods
+  .buyProton(
+      46
+  )
+  .send({ from: accounts[0],
+    value:Web3.utils.toWei('0.1')
+  })
+  .once("receipt", (reciept) => {
+      console.log("reciept",reciept);
+  });
+}
+const buyProton1 = document.getElementById("buyProton");
+buyProton1.onclick = buyProtons;
+
+covalentBonds = async() => {
+  await CPcontracts.methods.covalentBond(
+    "0x517fEfB53b58Ec8764ca885731Db20Ca2dcac7b7",
+    tknID.value,
+    'generic.B',
+    nftTokenAddress.value,
+    nftTokenId.value,
+
+  )
+  .send({ from: accounts[0]
+  })
+  .once("receipt", (reciept) => {
+      console.log("reciept",reciept);
+  });
+}
+
+const tknID = document.getElementById("tknID");
+const nftTokenAddress = document.getElementById("nftTokenAddress");
+const nftTokenId = document.getElementById("nftTokenId");
+
+const covalentBonds1 = document.getElementById("covalentBond");
+covalentBonds1.onclick = covalentBonds;
+
 init();
