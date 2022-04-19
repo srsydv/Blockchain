@@ -675,6 +675,16 @@ getSalePrices = async ()=>{
 };
 const getSalePrice1 = document.getElementById("getSalePrice");
 getSalePrice1.onclick = getSalePrices;
+createProtonForSales = async ()=>{
+    console.log("hi");
+    const receipt = protonBcontracts.methods.createProtonForSale(accounts[0], accounts[0], "https://gateway.pinata.cloud/ipfs/QmYruhfGzUrYo2eW16RdSwfDSmUQpBZ2hNAxifiamDWYEx", 100, 100, Web3.utils.toWei('0.1')).send({
+        from: accounts[0]
+    }).once("receipt", (reciept)=>{
+        console.log(reciept);
+    });
+};
+const createProtonForSales1 = document.getElementById("createProtonForSale");
+createProtonForSales1.onclick = createProtonForSales;
 init();
 
 },{"web3":"1uwsC","./abis/ChargedParticles.json":"73x3a","./abis/Proton.json":"9ffkC","./abis/ERC20.json":"cIa1r"}],"1uwsC":[function(require,module,exports) {
@@ -27558,8 +27568,8 @@ exports.getRandomBytesSync = getRandomBytesSync;
 
 },{"randombytes":"8hjhE"}],"8hjhE":[function(require,module,exports) {
 'use strict';
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // limit of Crypto.getRandomValues()
 // https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
 var MAX_BYTES = 65536;
@@ -28458,8 +28468,8 @@ exports.pipeline = require('./lib/internal/streams/pipeline.js');
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 'use strict';
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 module.exports = Readable;
 /*<replacement>*/ var Duplex;
 /*</replacement>*/ Readable.ReadableState = ReadableState;
@@ -37790,9 +37800,9 @@ http.METHODS = [
 ];
 
 },{"./lib/request":"csW06","./lib/response":"47huq","xtend":"93zjj","builtin-status-codes":"iqSVp","url":"7qjc7"}],"csW06":[function(require,module,exports) {
-var global = arguments[3];
-var Buffer = require("buffer").Buffer;
 var process = require("process");
+var Buffer = require("buffer").Buffer;
+var global = arguments[3];
 var capability = require('./capability');
 var inherits = require('inherits');
 var response = require('./response');
@@ -52228,8 +52238,8 @@ exports.hash = namehash;
 exports.normalize = normalize;
 
 },{"buffer":"fCgem","js-sha3":"2gVEN","idna-uts46-hx":"lDPQ9"}],"2gVEN":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 /**
  * [js-sha3]{@link https://github.com/emn178/js-sha3}
  *

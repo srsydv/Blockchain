@@ -262,4 +262,24 @@ getSalePrices = async() => {
 }
 const getSalePrice1 = document.getElementById("getSalePrice");
 getSalePrice1.onclick = getSalePrices;
+
+createProtonForSales = async() => {
+  console.log("hi")
+  const receipt = protonBcontracts.methods
+  .createProtonForSale(
+      accounts[0],
+      accounts[0],
+      "https://gateway.pinata.cloud/ipfs/QmYruhfGzUrYo2eW16RdSwfDSmUQpBZ2hNAxifiamDWYEx",
+      100,
+      100,
+      Web3.utils.toWei('0.1'),
+  )
+  .send({ from: accounts[0] }
+  )
+  .once("receipt", (reciept) => {
+      console.log(reciept);
+  });
+}
+const createProtonForSales1 = document.getElementById("createProtonForSale");
+createProtonForSales1.onclick = createProtonForSales;
 init();
