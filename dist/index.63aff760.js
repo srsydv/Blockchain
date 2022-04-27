@@ -28468,8 +28468,8 @@ exports.pipeline = require('./lib/internal/streams/pipeline.js');
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 'use strict';
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 module.exports = Readable;
 /*<replacement>*/ var Duplex;
 /*</replacement>*/ Readable.ReadableState = ReadableState;
@@ -34224,8 +34224,8 @@ exports.toByteArray = toByteArray;
 }
 
 },{"js-sha3":"7x0z6"}],"7x0z6":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 /**
  * [js-sha3]{@link https://github.com/emn178/js-sha3}
  *
@@ -36013,8 +36013,8 @@ EventEmitter.EventEmitter = EventEmitter;
 module.exports = EventEmitter;
 
 },{}],"k1sxd":[function(require,module,exports) {
-var Buffer = require("buffer").Buffer;
 var process = require("process");
+var Buffer = require("buffer").Buffer;
 var isNode = Object.prototype.toString.call(typeof process !== 'undefined' ? process : 0) === '[object process]';
 var isRN = typeof navigator !== 'undefined' && navigator.product === 'ReactNative';
 var _btoa = null;
@@ -36043,7 +36043,7 @@ module.exports = {
     btoa: _btoa
 };
 
-},{"buffer":"fCgem","process":"d5jf4","url":"7qjc7"}],"7qjc7":[function(require,module,exports) {
+},{"process":"d5jf4","buffer":"fCgem","url":"7qjc7"}],"7qjc7":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -37800,9 +37800,9 @@ http.METHODS = [
 ];
 
 },{"./lib/request":"csW06","./lib/response":"47huq","xtend":"93zjj","builtin-status-codes":"iqSVp","url":"7qjc7"}],"csW06":[function(require,module,exports) {
-var process = require("process");
 var Buffer = require("buffer").Buffer;
 var global = arguments[3];
+var process = require("process");
 var capability = require('./capability');
 var inherits = require('inherits');
 var response = require('./response');
@@ -38120,9 +38120,9 @@ xhr = null // Help gc
 ;
 
 },{}],"47huq":[function(require,module,exports) {
-var process = require("process");
 var Buffer = require("buffer").Buffer;
 var global = arguments[3];
+var process = require("process");
 var capability = require('./capability');
 var inherits = require('inherits');
 var stream = require('readable-stream');
@@ -38294,7 +38294,7 @@ IncomingMessage.prototype._onXHRProgress = function(resetTimers) {
     }
 };
 
-},{"process":"d5jf4","buffer":"fCgem","./capability":"jih7t","inherits":"bRL3M","readable-stream":"jXNWE"}],"93zjj":[function(require,module,exports) {
+},{"buffer":"fCgem","process":"d5jf4","./capability":"jih7t","inherits":"bRL3M","readable-stream":"jXNWE"}],"93zjj":[function(require,module,exports) {
 module.exports = extend;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 function extend() {
@@ -52238,8 +52238,8 @@ exports.hash = namehash;
 exports.normalize = normalize;
 
 },{"buffer":"fCgem","js-sha3":"2gVEN","idna-uts46-hx":"lDPQ9"}],"2gVEN":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 /**
  * [js-sha3]{@link https://github.com/emn178/js-sha3}
  *
@@ -83674,8 +83674,8 @@ module.exports = function(iterations, keylen) {
 };
 
 },{}],"T9r9Q":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 var defaultEncoding;
 /* istanbul ignore next */ if (global.process && global.process.browser) defaultEncoding = 'utf-8';
 else if (global.process && global.process.version) {
@@ -93960,8 +93960,8 @@ function compare(a, b) {
 
 },{"parse-asn1":"4Szbv","./mgf":"e2JgG","./xor":"iaxu0","bn.js":"VopIn","browserify-rsa":"e594P","create-hash":"2WyL8","./withPublic":"fFkPV","safe-buffer":"eW7r9"}],"k3tsT":[function(require,module,exports) {
 'use strict';
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 function oldBrowser() {
     throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11');
 }

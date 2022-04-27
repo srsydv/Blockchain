@@ -11,8 +11,6 @@
     <script type="module" src="main.js"></script>
 
     <div>
-    <!-- <input type="text" id="nftContractAddress" placeholder="NFT Contract Address">
-    <input type="text" id="nftTokenId" placeholder="NFT Token Id"> -->
     
     
     <div id="createErc20">
@@ -37,7 +35,7 @@
       />
   
         <button id="btnmintNFT">Mint</button>
-        
+        <span id="11">TokenId = </span>
     </div>
 
     
@@ -54,6 +52,7 @@
         />
     
           <button id="btnApprove">Approve</button>
+          <span id="123"></span>
           
       </div>
     
@@ -80,6 +79,7 @@
         />
     
           <button id="btnenergize">energize Particle</button>
+          <span id="112">assetToken = </span>
           
       </div>
 
@@ -145,6 +145,12 @@
             <h4>Release Particle</h4>
             <p>Releases the full amount of asset + interest held within the Particle by LP of the assets.</p>
             <input
+              type="text"
+              id="receiverAddress1"
+              required
+              placeholder="receiver Address"
+            />
+            <input
             type="text"
             id="tokenId2"
             required
@@ -158,13 +164,19 @@
           />
       
             <button id="releaseParticle">release Particle</button>
-            
+            <span id="121">assetToken </span>
         </div>
 
         <div>
           <div id="releaseParticles">
               <h4>Discharge Particle</h4>
               <p>Allows the owner or operator of the token (Particle) to collect or transfer the interest generated from the token without removing the underlying asset</p>
+              <input
+              type="text"
+              id="receiverAddress"
+              required
+              placeholder="receiver Address"
+            />
               <input
               type="text"
               id="tokenId3"
@@ -179,14 +191,110 @@
             />
         
             <button id="btndischargeParticle">Discharge Particle</button>
+            
+          </div>
+
+          <div>
+            <div id="releaseParticles">
+                <h4>Approve before Nested NFT</h4>
+              <input
+                type="text"
+                id="tokenIdofnft"
+                required
+                placeholder="Enter Token Number"
+              />
+          
+              <button id="approvesNFTToken">approves Token</button>
+              
+            </div>
+
+            <div id="createChargedParticle">
+              <h4>For Nested NFT</h4>
+              <input
+              type="text"
+              id="tknID"
+              required
+              placeholder="Token ID"
+            />
+            <input
+              type="text"
+              id="nftTokenAddress"
+              required
+              placeholder="NFT TokenAddress"
+            />
+            <input
+              type="text"
+              id="nftTokenId"
+              required
+              placeholder="NFT TokenId"
+            />
+        
+            <button id="covalentBond">Nested NFT</button>
               
           </div>
 
-    <br>
-    <button id="createProtonForSale">create Particle for sale</button>
-    <button id="setSalePrice">set Sale Price</button>
-    <button id="getSalePrice">Get Sale Price</button>
+          <!-- <button id="btncreateProtonForSale">create Particle for sale</button> -->
+
     
+    <!-- <button id="setSalePrice">set Sale Price</button>
+    <button id="getSalePrice">Get Sale Price</button>
+    <button id="buyProton">Buy NFT</button> -->
+    
+    <!-- <button id="btncreateProtonForSale">set Price</button> -->
+    <br>
+    
+    
+    <div>
+      <div id="releaseParticles">
+        <h4>Sale the NFT</h4>
+        <input
+        type="text"
+        id="Add"
+        required
+        placeholder="Address of receiver"
+      />
+          <input
+          type="text"
+          id="004"
+          required
+          placeholder="Enter Token ID"
+        />
+        <button id="approveforsale">Approve for sale</button>
+        <span id="005"></span>
+    <button id="safeTransferFrom">safe Transfer From</button>
+    <span id="006"></span>
+        
+      </div>
+    
+    <br>
+    <div>
+      <div id="releaseParticles">
+        <h4>Know NFT creater Address</h4>
+          <input
+          type="text"
+          id="002"
+          required
+          placeholder="Enter Token ID"
+        />
+        <button id="creatorOf">creatorOf</button>
+        <span id="00">Creater</span>
+        
+      </div>
+      <br>
+    
+    <div>
+      <div id="releaseParticles">
+        <h4>Know NFT Owner Address</h4>
+          <input
+          type="text"
+          id="003"
+          required
+          placeholder="Enter Token ID"
+        />
+        <button id="ownerOf">ownerOf</button>
+    <span id="001">Owner</span>
+        
+      </div>
     
 </body>
 </html>
