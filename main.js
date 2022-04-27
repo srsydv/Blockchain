@@ -304,7 +304,6 @@ const AnnuityPercent = document.getElementById("AnnuityPercent");
 const createChargedParticles1 = document.getElementById("btncreateChargedParticle");
 createChargedParticles1.onclick = createChargedParticles;
 
-<<<<<<< HEAD
 //   setSalePrices = async() => {
 //     const receipt = protonBcontracts.methods
 //     .setSalePrice(
@@ -434,105 +433,6 @@ covalentBonds = async() => {
     nftTokenAddress.value,
     nftTokenId.value,
 
-=======
-  setSalePrices = async() => {
-    const receipt = protonBcontracts.methods
-    .setSalePrice(
-        46,
-        Web3.utils.toWei('0.1')
-    )
-    .send({ from: accounts[0],
-      // gas:"600000" 
-    })
-    .once("receipt", (reciept) => {
-        console.log("reciept",reciept);
-    });
-    protonBcontracts.methods
-    .setRoyaltiesPct(
-        46,
-        10
-    )
-    .send({ from: accounts[0],
-      // gas:"600000" 
-    })
-    .once("receipt", (reciept) => {
-        console.log("reciept",reciept);
-    });
-    protonBcontracts.methods
-    .setCreatorRoyaltiesReceiver(
-        46,
-        "0x29d14148f9fd7F8EA48c1F81E494c9Bf859CB074"
-    )
-    .send({ from: accounts[0],
-      // gas:"600000" 
-    })
-    .once("receipt", (reciept) => {
-        console.log("reciept",reciept);
-    });
-    
-    
-}
-const setSalePrice1 = document.getElementById("setSalePrice");
-setSalePrice1.onclick = setSalePrices;
-
-getSalePrices = async() => {
-    // const receipt = protonBcontracts.methods
-    // .createProtonForSale(
-    //     "0xF7D3bdf086d66E548c945CA410BB80Fc00E49831",
-    //     "0xF7D3bdf086d66E548c945CA410BB80Fc00E49831",
-    //     "https://gateway.pinata.cloud/ipfs/QmYruhfGzUrYo2eW16RdSwfDSmUQpBZ2hNAxifiamDWYEx",
-    //     100,
-    //     100,
-    //     1
-    // )
-    // .send({ from: accounts[0]
-    //   // gas:"600000",
-    //         // value: Web3.utils.toWei('1') 
-    // })
-    // .once("receipt", (reciept) => {
-    //     console.log("reciept",reciept);
-    // });
-    const receipt = protonBcontracts.methods
-    .getSalePrice(
-        "46"
-    )
-    .call(
-      function(err,res){
-        if(res){
-          console.log("getSalePrice",res)
-        }
-      }
-    )
-    protonBcontracts.methods
-    .getLastSellPrice(
-        "46"
-    )
-    .call(
-      function(err,res){
-        if(res){
-          console.log("getLastSellPrice",res)
-        }
-      }
-    )
-    //39
-}
-const getSalePrice1 = document.getElementById("getSalePrice");
-getSalePrice1.onclick = getSalePrices;
-
-createProtonForSales = async() => {
-  console.log("hi")
-  const receipt = protonBcontracts.methods
-  .createProtonForSale(
-      accounts[0],
-      accounts[0],
-      "abc.com",
-      10,
-      10,
-      Web3.utils.toWei('0.1'),  
-  )
-  .send({ from: accounts[0],
-    gas:"600000" }
->>>>>>> caaf6333b4858eed66f88e11407af7d706270e75
   )
   .send({ from: accounts[0]
   })
@@ -540,44 +440,6 @@ createProtonForSales = async() => {
       console.log("reciept",reciept);
   });
 }
-<<<<<<< HEAD
-=======
-const createProtonForSales1 = document.getElementById("btncreateProtonForSale");
-createProtonForSales1.onclick = createProtonForSales;
-
-
-
-buyProtons = async() => {
-  const receipt = protonBcontracts.methods
-  .buyProton(
-      46
-  )
-  .send({ from: accounts[0],
-    value:Web3.utils.toWei('0.1')
-  })
-  .once("receipt", (reciept) => {
-      console.log("reciept",reciept);
-  });
-}
-const buyProton1 = document.getElementById("buyProton");
-buyProton1.onclick = buyProtons;
-
-covalentBonds = async() => {
-  await CPcontracts.methods.covalentBond(
-    "0x517fEfB53b58Ec8764ca885731Db20Ca2dcac7b7",
-    tknID.value,
-    'generic.B',
-    nftTokenAddress.value,
-    nftTokenId.value,
-
-  )
-  .send({ from: accounts[0]
-  })
-  .once("receipt", (reciept) => {
-      console.log("reciept",reciept);
-  });
-}
->>>>>>> caaf6333b4858eed66f88e11407af7d706270e75
 
 const tknID = document.getElementById("tknID");
 const nftTokenAddress = document.getElementById("nftTokenAddress");
